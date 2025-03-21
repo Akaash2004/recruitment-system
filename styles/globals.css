@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme - Warm neutrals with sage green accents */
+  --background: 35 25% 98%;
+  --foreground: 20 24% 22%;
+  --card: 35 25% 96%;
+  --card-foreground: 20 24% 22%;
+  --popover: 35 25% 96%;
+  --popover-foreground: 20 24% 22%;
+  --primary: 150 22% 50%;
+  --primary-foreground: 35 40% 98%;
+  --secondary: 35 15% 90%;
+  --secondary-foreground: 20 24% 22%;
+  --muted: 35 15% 90%;
+  --muted-foreground: 20 24% 40%;
+  --accent: 150 22% 92%;
+  --accent-foreground: 150 22% 35%;
+  --destructive: 0 70% 60%;
+  --destructive-foreground: 35 40% 98%;
+  --border: 20 24% 88%;
+  --input: 20 24% 88%;
+  --ring: 150 22% 50%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Dark theme - Rich earth tones with sage highlights */
+  --background: 20 24% 12%;
+  --foreground: 35 25% 98%;
+  --card: 20 24% 15%;
+  --card-foreground: 35 25% 98%;
+  --popover: 20 24% 15%;
+  --popover-foreground: 35 25% 98%;
+  --primary: 150 22% 55%;
+  --primary-foreground: 20 24% 12%;
+  --secondary: 35 15% 25%;
+  --secondary-foreground: 35 25% 98%;
+  --muted: 35 15% 25%;
+  --muted-foreground: 35 25% 85%;
+  --accent: 150 22% 25%;
+  --accent-foreground: 150 22% 90%;
+  --destructive: 0 62.8% 50.6%;
+  --destructive-foreground: 35 25% 98%;
+  --border: 20 24% 25%;
+  --input: 20 24% 25%;
+  --ring: 150 22% 55%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Enhanced Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+    font-feature-settings: "salt" on, "liga" 1;
+  }
+
+  h1 {
+    @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold md:text-4xl;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed text-base md:text-lg;
+    font-feature-settings: "kern" 1, "onum" 1, "liga" 1;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Better Focus Styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
